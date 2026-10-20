@@ -1,0 +1,260 @@
+/* ==========================================
+FLASHVAULT - MAIN STYLESHEET
+Platform Hafalan & Kuis SMA Kelas 11
+========================================== */
+
+/* 1. RESET & VARIABLES */
+
+{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+:root {
+--primary-color: #4f46e5;
+--primary-hover: #4338ca;
+--bg-color: #f4f7f6;
+--card-bg: #ffffff;
+--text-main: #1f2937;
+--text-muted: #6b7280;
+--card-back-bg: #ecfdf5;
+--card-back-border: #a7f3d0;
+--card-back-text: #065f46;
+--shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+--shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+body {
+background-color: var(--bg-color);
+color: var(--text-main);
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+line-height: 1.5;
+}
+
+/* 2. HEADER & LAYOUT */
+header {
+background-color: var(--primary-color);
+color: white;
+text-align: center;
+padding: 2rem 1rem;
+box-shadow: var(--shadow-sm);
+}
+
+.logo {
+font-size: 2.2rem;
+font-weight: 700;
+letter-spacing: -0.5px;
+}
+
+.subtitle {
+font-size: 0.95rem;
+opacity: 0.9;
+margin-top: 0.25rem;
+}
+
+.container {
+max-width: 800px;
+width: 90%;
+margin: 2rem auto;
+flex: 1;
+}
+
+.hidden {
+display: none !important;
+}
+
+/* 3. DECK GRID & TOPIC CARDS */
+.deck-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 1.5rem;
+margin-top: 1.5rem;
+}
+
+.deck-card {
+background: var(--card-bg);
+padding: 1.5rem;
+border-radius: 12px;
+box-shadow: var(--shadow-sm);
+cursor: pointer;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+border-top: 4px solid var(--primary-color);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.deck-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.deck-card h3 {
+font-size: 1.15rem;
+margin-bottom: 0.5rem;
+color: var(--text-main);
+}
+
+.deck-card p {
+font-size: 0.85rem;
+color: var(--text-muted);
+margin-bottom: 0.25rem;
+}
+
+/* 4. FLASHCARD 3D FLIP ANIMATION */
+.flashcard-container {
+perspective: 1000px;
+width: 100%;
+max-width: 500px;
+height: 300px;
+margin: 1.5rem auto;
+}
+
+.flashcard {
+width: 100%;
+height: 100%;
+position: relative;
+transform-style: preserve-3d;
+transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+cursor: pointer;
+}
+
+.flashcard.flipped {
+transform: rotateY(180deg);
+}
+
+.card-face {
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+border-radius: 16px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 2rem;
+text-align: center;
+font-size: 1.2rem;
+font-weight: 600;
+box-shadow: var(--shadow-lg);
+}
+
+.card-front {
+background-color: var(--card-bg);
+color: var(--text-main);
+border: 2px solid #e5e7eb;
+}
+
+.card-back {
+background-color: var(--card-back-bg);
+color: var(--card-back-text);
+border: 2px solid var(--card-back-border);
+transform: rotateY(180deg);
+}
+
+.hint-text {
+font-size: 0.75rem;
+color: #9ca3af;
+margin-top: 1rem;
+font-weight: 400;
+}
+
+/* 5. CONTROLS & BUTTONS */
+.controls {
+display: flex;
+justify-content: center;
+gap: 1rem;
+margin-top: 1.5rem;
+}
+
+.btn {
+padding: 0.6rem 1.2rem;
+border: none;
+border-radius: 8px;
+background-color: #e5e7eb;
+color: #374151;
+font-weight: 600;
+cursor: pointer;
+transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+background-color: #d1d5db;
+}
+
+.btn:active {
+transform: scale(0.98);
+}
+
+.btn-primary {
+background-color: var(--primary-color);
+color: white;
+}
+
+.btn-primary:hover {
+background-color: var(--primary-hover);
+}
+
+.btn-back {
+background: none;
+border: none;
+color: var(--primary-color);
+font-weight: 700;
+cursor: pointer;
+margin-bottom: 1rem;
+font-size: 0.95rem;
+padding: 0;
+}
+
+.btn-back:hover {
+text-decoration: underline;
+}
+
+.card-counter {
+text-align: center;
+margin-top: 1rem;
+color: var(--text-muted);
+font-size: 0.9rem;
+}
+
+/* 6. FOOTER */
+footer {
+text-align: center;
+padding: 1.5rem;
+font-size: 0.85rem;
+color: #9ca3af;
+border-top: 1px solid #e5e7eb;
+margin-top: auto;
+background-color: #ffffff;
+}
+
+/* 7. RESPONSIVE DESIGN (MOBILE OPTIMIZATION) */
+@media (max-width: 600px) {
+.logo {
+font-size: 1.8rem;
+}
+
+.flashcard-container {
+height: 260px;
+}
+
+.card-face {
+font-size: 1.05rem;
+padding: 1.25rem;
+}
+
+.controls {
+flex-wrap: wrap;
+}
+
+.btn {
+flex: 1;
+min-width: 100px;
+text-align: center;
+}
+}
