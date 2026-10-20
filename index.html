@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduPlan AI - Asisten Jadwal Belajar Cerdas</title>
+  
+  <!-- CSS Internal (Styling & UI/UX) -->
+  <style>
+    /* Reset & Base Style */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f7f6;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Container Header / Hero */
+    header {
+      background: linear-gradient(135deg, #4A90E2, #50E3C2);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background-color: #ff6b6b;
+      color: white;
+      padding: 12px 30px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: background 0.3s ease;
+    }
+
+    .btn-cta:hover {
+      background-color: #ee5253;
+    }
+
+    /* Section Global */
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+      color: #2c3e50;
+    }
+
+    /* Features Section */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 10px;
+      color: #4A90E2;
+    }
+
+    /* AI Tool Interactive Section */
+    .ai-tool-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: #4A90E2;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-submit:hover {
+      background: #357ABD;
+    }
+
+    .result-box {
+      margin-top: 25px;
+      padding: 20px;
+      background-color: #eef9f6;
+      border-left: 5px solid #50E3C2;
+      border-radius: 4px;
+      display: none;
+    }
+
+    /* Pricing Section */
+    .pricing-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .price-card {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 25px;
+      width: 280px;
+      text-align: center;
+    }
+
+    .price-card.popular {
+      border-color: #4A90E2;
+      position: relative;
+    }
+
+    .price-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #2c3e50;
+      margin: 15px 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2c3e50;
+      color: white;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header>
+    <h1>EduPlan AI 🚀</h1>
+    <p>Susun Jadwal Belajar Efektif & Personalisasi dalam Hitungan Detik Menggunakan Kecerdasan Buatan.</p>
+    <a href="#ai-demo" class="btn-cta">Coba AI Generator Gratis</a>
+  </header>
+
+  <!-- KEUNGGULAN PRODUK -->
+  <section>
+    <h2 class="section-title">Mengapa Memilih EduPlan AI?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>⚡ Otomatis & Cepat</h3>
+        <p>Tidak perlu bingung mengatur waktu belajar, AI menyusunnya sesuai gaya belajarmu.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🎯 Bebas Stress</h3>
+        <p>Mencegah *burnout* dengan membagi porsi belajar dan istirahat secara seimbang.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📈 Target Tercapai</h3>
+        <p>Dioptimalkan khusus untuk persiapan Ujian Akhir, UTBK, maupun tugas harian sekolah.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FITUR INTERAKTIF SIMULASI AI -->
+  <section id="ai-demo">
+    <h2 class="section-title">Simulasi AI Schedule Generator</h2>
+    <div class="ai-tool-container">
+      <form id="aiForm">
+        <div class="form-group">
+          <label for="subject">Mata Pelajaran Utama / Topik Ujian:</label>
+          <input type="text" id="subject" placeholder="Contoh: Matematika & Fisika" required>
+        </div>
+
+        <div class="form-group">
+          <label for="duration">Waktu Belajar Luang Per Hari:</label>
+          <select id="duration" required>
+            <option value="1 Jam">1 Jam / Hari</option>
+            <option value="2 Jam">2 Jam / Hari</option>
+            <option value="3 Jam+">3 Jam atau lebih / Hari</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="goal">Target Utama:</label>
+          <select id="goal" required>
+            <option value="Pemahaman Dasar">Pemahaman Dasar Materi</option>
+            <option value="Persiapan Ujian">Persiapan Ujian / Soal HOTS</option>
+            <option value="Review Singkat">Review Kilat Sebelum Sekolah</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-submit">Buatkan Rencana Belajar dengan AI ✨</button>
+      </form>
+
+      <!-- HASIL REKOMENDASI AI -->
+      <div id="resultBox" class="result-box">
+        <h3>📌 Rencana Belajar AI Anda:</h3>
+        <p id="outputPlan" style="margin-top: 10px;"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODEL BISNIS / PRICING -->
+  <section>
+    <h2 class="section-title">Pilihan Paket Langganan</h2>
+    <div class="pricing-cards">
+      <div class="price-card">
+        <h3>Paket Starter</h3>
+        <div class="price">Gratis</div>
+        <p>Akses 3x pembuatan jadwal AI per minggu.</p>
+      </div>
+      <div class="price-card popular">
+        <h3>Paket Pelajar Pro</h3>
+        <div class="price">Rp 15.000 <small>/bulan</small></div>
+        <p>Akses AI tanpa batas, ringkasan materi harian, & pengingat WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 EduPlan AI - Proyek Kewirausahaan Digital Siswa SMA.</p>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC (Simulasi AI) -->
+  <script>
+    document.getElementById('aiForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Mencegah reload halaman
+
+      // Ambil nilai input dari pengguna
+      const subject = document.getElementById('subject').value;
+      const duration = document.getElementById('duration').value;
+      const goal = document.getElementById('goal').value;
+
+      // Logika Sederhana Simulasi Generasi AI
+      let planText = `Berdasarkan target Anda (<strong>${goal}</strong>) dengan durasi <strong>${duration}</strong> untuk mata pelajaran <strong>${subject}</strong>, berikut rekomendasi strategi AI: <br><br>`;
+
+      if (duration === "1 Jam") {
+        planText += "• <strong>25 Menit:</strong> Fokus materi inti.<br>• <strong>5 Menit:</strong> Istirahat (Teknik Pomodoro).<br>• <strong>30 Menit:</strong> Latihan 5 contoh soal.";
+      } else if (duration === "2 Jam") {
+        planText += "• <strong>45 Menit:</strong> Pendalaman rumus/konsep dasar.<br>• <strong>15 Menit:</strong> Istirahat.<br>• <strong>45 Menit:</strong> Pengerjaan soal variasi.<br>• <strong>15 Menit:</strong> Evaluasi jawaban salah.";
+      } else {
+        planText += "• <strong>60 Menit:</strong> Pembahasan materi berat & rangkuman.<br>• <strong>15 Menit:</strong> Istirahat total.<br>• <strong>60 Menit:</strong> Simulasi mini-test / latihan soal HOTS.<br>• <strong>45 Menit:</strong> Review menyeluruh.";
+      }
+
+      // Tampilkan Hasil
+      const resultBox = document.getElementById('resultBox');
+      const outputPlan = document.getElementById('outputPlan');
+
+      outputPlan.innerHTML = planText;
+      resultBox.style.display = 'block';
+      
+      // Scroll halus ke area hasil
+      resultBox.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
